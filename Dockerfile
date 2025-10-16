@@ -1,8 +1,8 @@
 # Use the latest Alpine Linux as base for smallest image
 FROM alpine:latest
 
-# Install GnuPG
-RUN apk add --no-cache gnupg
+# Update package index and install GnuPG
+RUN apk update && apk add --no-cache gnupg
 
 # Set GPG as the entrypoint
 ENTRYPOINT ["gpg"]
